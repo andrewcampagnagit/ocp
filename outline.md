@@ -24,3 +24,5 @@
 - haproxy: yum
 - oc / kubectl: https://mirror.openshift.com/pub/openshift-v4/clients/ocp/4.3.8/openshift-client-linux-4.3.8.tar.gz
 - openshift-install: https://mirror.openshift.com/pub/openshift-v4/clients/ocp/4.3.8/openshift-install-linux-4.3.8.tar.gz
+- Any Linux OS: Download anywhere
+- RHCOS: https://mirror.openshift.com/pub/openshift-v4/dependencies/rhcos/4.3/4.3.8/
