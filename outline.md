@@ -1,5 +1,7 @@
 # OpenShift Container Platform requirements - Cloud Pak for Security
 
+- Needs updating for CP4S 1.5
+
 #### Machine Spec Table
 
 | NAME                      	| OS        	| CPU 	| MEM  	| STORAGE                 	| FUNCTION                                                                              	| SOFTWARE                              	|
