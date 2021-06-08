@@ -13,9 +13,9 @@
 | Compute-2 / Worker-2      	| RHCOS     	| 8  	| 32Gi 	| 100Gi                   	| Runs scheduled pods / IBM Common Services Management                                  	|                                       	|
 | Compute-3 / Worker-3      	| RHCOS     	| 8   	| 32Gi 	| 100Gi                   	| Runs scheduled pods                                                                   	|                                       	|
 | Compute-4 / Worker-4      	| RHCOS     	| 8   	| 32Gi 	| 100Gi                   	| Runs scheduled pods                                                                   	|                                       	|
-| Storage-1                 	| RHCOS     	| 10   	| 22Gi  	| SDA: 100Gi / SDB: 500Gi 	| Runs scheduled pods / rook-ceph / SDB formatted for block storage                     	|                                       	|
-| Storage-2                 	| RHCOS     	| 10   	| 22Gi  	| SDA: 100Gi / SDB: 500Gi 	| Runs scheduled pods / rook-ceph / SDB formatted for block storage                     	|                                       	|
-| Storage-3                 	| RHCOS     	| 10   	| 22Gi  	| SDA: 100Gi / SDB: 500Gi 	| Runs scheduled pods / rook-ceph / SDB formatted for block storage                     	|                                       	|
+| Storage-1                 	| RHCOS     	| 11   	| 22Gi  	| SDA: 100Gi / SDB: 500Gi 	| Runs scheduled pods / rook-ceph / SDB formatted for block storage                     	|                                       	|
+| Storage-2                 	| RHCOS     	| 11   	| 22Gi  	| SDA: 100Gi / SDB: 500Gi 	| Runs scheduled pods / rook-ceph / SDB formatted for block storage                     	|                                       	|
+| Storage-3                 	| RHCOS     	| 11   	| 22Gi  	| SDA: 100Gi / SDB: 500Gi 	| Runs scheduled pods / rook-ceph / SDB formatted for block storage                     	|                                       	|
 | Compute-LoadBalancer      	| Any Linux 	| 4   	| 8Gi  	| 100Gi                   	| OpenShift Ingress                                                                     	| haproxy                               	|
 | Master-LoadBalancer       	| Any Linux 	| 4   	| 8Gi  	| 100Gi                   	| etcd cluster                                                                          	| haproxy                               	|
 
