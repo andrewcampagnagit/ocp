@@ -16,8 +16,8 @@
 | Storage-1                 	| RHCOS     	| 11   	| 22Gi  	| SDA: 100Gi / SDB: 500Gi 	| Runs scheduled pods / rook-ceph / SDB formatted for block storage                     	|                                       	|
 | Storage-2                 	| RHCOS     	| 11   	| 22Gi  	| SDA: 100Gi / SDB: 500Gi 	| Runs scheduled pods / rook-ceph / SDB formatted for block storage                     	|                                       	|
 | Storage-3                 	| RHCOS     	| 11   	| 22Gi  	| SDA: 100Gi / SDB: 500Gi 	| Runs scheduled pods / rook-ceph / SDB formatted for block storage                     	|                                       	|
-| Compute-LoadBalancer      	| Any Linux 	| 4   	| 8Gi  	| 100Gi                   	| OpenShift Ingress                                                                     	| haproxy                               	|
-| Master-LoadBalancer       	| Any Linux 	| 4   	| 8Gi  	| 100Gi                   	| etcd cluster                                                                          	| haproxy                               	|
+| Compute-LoadBalancer      	| Any Linux 	| 4   	| 8Gi  	| 100Gi                   	| OpenShift application ingress                                                                     	| haproxy                               	|
+| Master-LoadBalancer       	| Any Linux 	| 4   	| 8Gi  	| 100Gi                   	| etcd cluster / Kube API                                                                          	| haproxy                               	|
 
 #### Downloads
 
