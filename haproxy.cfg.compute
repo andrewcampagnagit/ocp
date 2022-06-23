@@ -1,28 +1,4 @@
-#---------------------------------------------------------------------
-# Example configuration for a possible web application.  See the
-# full configuration options online.
-#
-#   https://www.haproxy.org/download/1.8/doc/configuration.txt
-#
-#---------------------------------------------------------------------
-
-#---------------------------------------------------------------------
-# Global settings
-#---------------------------------------------------------------------
 global
-    # to have these messages end up in /var/log/haproxy.log you will
-    # need to:
-    #
-    # 1) configure syslog to accept network log events.  This is done
-    #    by adding the '-r' option to the SYSLOGD_OPTIONS in
-    #    /etc/sysconfig/syslog
-    #
-    # 2) configure local2 events to go to the /var/log/haproxy.log
-    #   file. A line like the following can be added to
-    #   /etc/sysconfig/syslog
-    #
-    #    local2.*                       /var/log/haproxy.log
-    #
     log         127.0.0.1 local2
 
     chroot      /var/lib/haproxy
@@ -44,7 +20,7 @@ global
 # use if not designated in their block
 #---------------------------------------------------------------------
 defaults
-    mode                    tcp
+    mode                    http
     log                     global
     option                  httplog
     option                  dontlognull
@@ -64,30 +40,31 @@ defaults
 #---------------------------------------------------------------------
 # main frontend which proxys to the backends
 #---------------------------------------------------------------------
-frontend https
-    bind *:443
+frontend api
+    bind *:6443
     mode tcp
-    default_backend             https
+    default_backend             api
 
-frontend http
-    bind *:80
-    mode http
-    default_backend             http
+frontend machine-config
+    bind *:22623
+    mode tcp
+    default_backend		machine-config
 
 #---------------------------------------------------------------------
 # round robin balancing between the various backends
 #---------------------------------------------------------------------
-backend https
+backend api
+    mode tcp
     balance     roundrobin
-    server  compute0 161.169.1.69:443 check
-    server  compute1 161.169.1.70:443 check
-    server  compute2 161.169.1.71:443 check
-    server  compute3 161.169.1.72:443 check
+    server  control0 161.169.1.66:6443 check
+    server  control1 161.169.1.67:6443 check
+    server  control2 161.169.1.68:6443 check
+    server  bootstrap 161.169.1.65:6443 check
 
-backend http
+backend machine-config
+    mode tcp
     balance     roundrobin
-    mode http
-    server  compute0 161.169.1.69:80 check
-    server  compute1 161.169.1.70:80 check
-    server  compute2 161.169.1.71:80 check
-    server  compute3 161.169.1.72:80 check
+    server  control0 161.169.1.66:22623 check
+    server  control1 161.169.1.67:22623 check
+    server  control2 161.169.1.68:22623 check
+    server  bootstrap 161.169.1.65:22623 check
